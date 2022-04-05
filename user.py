@@ -129,7 +129,7 @@ async def activityID(event):
             elif "jd_zdjr_activityId" in event.message.text:
                 await cmd('task /ql/scripts/KingRan_KR/jd_zdjr.js now')
             elif "VENDER_ID" in event.message.text:
-                await cmd('task /ql/scripts/jd_OpenCard_Force.js now')
+                await cmd('task /ql/scripts/KingRan_KR/jd_OpenCard_Force.js now')
             elif "WXGAME_ACT_ID" in event.message.text:
                 await cmd('task /ql/scripts/jd_doudou.js now')
             elif "SHARE_ACTIVITY_ID" in event.message.text:
