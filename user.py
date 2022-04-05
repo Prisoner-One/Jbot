@@ -41,39 +41,39 @@ async def user(event):
 async def activityID(event):
     try:
         text = event.message.text
-        #if "computer_activityId" in text:
+        if "computer_activityId" in text:
             name = "电脑配件"
-        #elif "comm_activityIDList" in text:
+        elif "comm_activityIDList" in text:
             name = "jdjoy_open通用ID任务"
-        #elif "jd_mhurlList" in text:
+        elif "jd_mhurlList" in text:
             name = "盲盒任务抽京豆"
-        #elif "jd_nzmhurl" in text:
+        elif "jd_nzmhurl" in text:
             name = "女装盲盒抽京豆"
-        #elif "wish_appIdArrList" in text:
+        elif "wish_appIdArrList" in text:
             name = "许愿池抽奖机"
-        #elif "jd_redrain_url" in text:
+        elif "jd_redrain_url" in text:
             name = "整点京豆雨"
-        #elif "jd_redrain_half_url" in text:
+        elif "jd_redrain_half_url" in text:
             name = "半点京豆雨"
-        #elif "M_WX_COLLECT_CARD_URL" in text:
+        elif "M_WX_COLLECT_CARD_URL" in text:
             name = "集卡任务"
         elif "jd_cjhy_activityId" in text:
             name = "cj组队瓜分"
         elif "jd_zdjr_activityId" in text:
             name = "lz组队瓜分"
-        #elif "VENDER_ID" in text:
+        elif "VENDER_ID" in text:
             name = "入会开卡领豆"
-        #elif "WXGAME_ACT_ID" in text:
+        elif "WXGAME_ACT_ID" in text:
             name = "打豆豆游戏"
-        #elif "SHARE_ACTIVITY_ID" in text:
+        elif "SHARE_ACTIVITY_ID" in text:
             name = "分享有礼"
-        #elif "welfare" in text:
+        elif "welfare" in text:
             name = "联合关注+加购+分享领豆"
-        #elif "M_FOLLOW_SHOP_ARGV" in text:
+        elif "M_FOLLOW_SHOP_ARGV" in text:
             name = "M关注有礼"
-        #elif "M_WX_LUCK_DRAW_URL" in text:
+        elif "M_WX_LUCK_DRAW_URL" in text:
             name = "M幸运抽奖"
-        #elif "M_WX_ADD_CART_URL" in text:
+        elif "M_WX_ADD_CART_URL" in text:
             name = "M加购有礼"
         else:
             return
