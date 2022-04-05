@@ -61,7 +61,9 @@ async def activityID(event):
             name = "cj组队瓜分"
         elif "jd_zdjr_activityId" in text:
             name = "lz组队瓜分"
-        elif "WXGAME_ACT_ID" in text:
+        elif "VENDER_ID" in text:
+            name = "入会开卡领豆"
+        #elif "WXGAME_ACT_ID" in text:
             name = "打豆豆游戏"
         elif "SHARE_ACTIVITY_ID" in text:
             name = "分享有礼"
