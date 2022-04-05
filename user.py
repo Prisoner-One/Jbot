@@ -41,10 +41,40 @@ async def user(event):
 async def activityID(event):
     try:
         text = event.message.text
-        if "jd_cjhy_activityId" in text:
+        if "computer_activityId" in text:
+            name = "电脑配件"
+        elif "comm_activityIDList" in text:
+            name = "jdjoy_open通用ID任务"
+        elif "jd_mhurlList" in text:
+            name = "盲盒任务抽京豆"
+        elif "jd_nzmhurl" in text:
+            name = "女装盲盒抽京豆"
+        elif "wish_appIdArrList" in text:
+            name = "许愿池抽奖机"
+        elif "jd_redrain_url" in text:
+            name = "整点京豆雨"
+        elif "jd_redrain_half_url" in text:
+            name = "半点京豆雨"
+        elif "M_WX_COLLECT_CARD_URL" in text:
+            name = "集卡任务"
+        elif "jd_cjhy_activityId" in text:
             name = "cj组队瓜分"
         elif "jd_zdjr_activityId" in text:
             name = "lz组队瓜分"
+        elif "VENDER_ID" in text:
+            name = "入会开卡领豆"
+        elif "WXGAME_ACT_ID" in text:
+            name = "打豆豆游戏"
+        elif "SHARE_ACTIVITY_ID" in text:
+            name = "分享有礼"
+        elif "welfare" in text:
+            name = "联合关注+加购+分享领豆"
+        elif "M_FOLLOW_SHOP_ARGV" in text:
+            name = "M关注有礼"
+        elif "M_WX_LUCK_DRAW_URL" in text:
+            name = "M幸运抽奖"
+        elif "M_WX_ADD_CART_URL" in text:
+            name = "M加购有礼"
         else:
             return
         msg = await jdbot.send_message(chat_id, f'【监控】 监测到`{name}` 环境变量！')
@@ -82,10 +112,37 @@ async def activityID(event):
             await jdbot.edit_message(msg, f"【取消】 `{name}` 环境变量无需改动！")
             return
         try:
-            if "jd_cjhy_activityId" in event.message.text:
+            if "computer_activityId" in event.message.text:
+                await cmd('task /ql/scripts/jd_computer.js now')
+            elif "comm_activityIDList" in event.message.text:
+                await cmd('task /ql/scripts/jd_joyjd_open.js now')
+            elif "jd_mhurlList" in event.message.text:
+                await cmd('task /ql/scripts/jd_mhtask.js now')
+            elif "jd_nzmhurl" in event.message.text:
+                await cmd('task /ql/scripts/jd_nzmh.js now')
+            elif "wish_appIdArrList" in event.message.text:
+                await cmd('task /ql/scripts/jd_wish.js now')
+            elif "M_WX_COLLECT_CARD_URL" in event.message.text:
+                await cmd('task /ql/scripts/m_jd_wx_collectCard.js now')
+            elif "jd_cjhy_activityId" in event.message.text:
                 await cmd('task /ql/scripts/KingRan_KR/jd_cjzdgf.js now')
             elif "jd_zdjr_activityId" in event.message.text:
                 await cmd('task /ql/scripts/KingRan_KR/jd_zdjr.js now')
+            elif "VENDER_ID" in event.message.text:
+                await cmd('task /ql/scripts/jd_OpenCard_Force.js now')
+            elif "WXGAME_ACT_ID" in event.message.text:
+                await cmd('task /ql/scripts/jd_doudou.js now')
+            elif "SHARE_ACTIVITY_ID" in event.message.text:
+                await cmd('task /ql/scripts/jd_share.js now')
+            elif "welfare" in event.message.text:
+                await cmd('task /ql/scripts/fav_and_addcart.js now')
+            elif "M_FOLLOW_SHOP_ARGV" in event.message.text:
+                await cmd('task /ql/scripts/m_jd_follow_shop.js now')
+            elif "M_WX_LUCK_DRAW_URL" in event.message.text:
+                await cmd('task /ql/scripts/m_jd_wx_luckDraw.js now')
+            elif "M_WX_ADD_CART_URL" in event.message.text:
+                await cmd('task /ql/scripts/m_jd_wx_addCart.js now')
+            elif "jd_redrain_url" in event.message.text:
                 msg = await jdbot.send_message(chat_id, r'`更换整点雨url完毕\n请定时任务0 0 * * * jtask jd_redrain now')
                 await asyncio.sleep(1)
                 await jdbot.delete_messages(chat_id, msg)
