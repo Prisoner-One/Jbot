@@ -41,7 +41,9 @@ async def user(event):
 async def activityID(event):
     try:
         text = event.message.text
-        if "computer_activityId" in text:
+        if "zjdbody" in text:
+            name = "半自动豆豆"
+        elif "computer_activityId" in text:
             name = "电脑配件"
         elif "comm_activityIDList" in text:
             name = "jdjoy_open通用ID任务"
@@ -112,7 +114,9 @@ async def activityID(event):
             await jdbot.edit_message(msg, f"【取消】 `{name}` 环境变量无需改动！")
             return
         try:
-            if "computer_activityId" in event.message.text:
+            if "zjdbody" in event.message.text:
+                await cmd('task /ql/scripts/zxd.js now')
+            elif "computer_activityId" in event.message.text:
                 await cmd('task /ql/scripts/jd_computer.js now')
             elif "comm_activityIDList" in event.message.text:
                 await cmd('task /ql/scripts/jd_joyjd_open.js now')
